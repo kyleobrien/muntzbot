@@ -1,4 +1,4 @@
 muntzbot
 ========
 
-Very simple, Twitter bot that responds to a mention of "Nelson Muntz" with a characteristic laugh.
+A simple Twitter bot that responds to the mention of "Nelson Muntz" with his characteristic laugh.
