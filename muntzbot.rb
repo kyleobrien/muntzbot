@@ -5,7 +5,7 @@ require 'open-uri'
 require 'rubygems'
 require 'twitter'
 
-MUNTZBOT_VERSION = "1.0.4"
+MUNTZBOT_VERSION = "1.0.5"
 MUNTZBOT_CONSUMER_KEY = "zbPrmq8XXqnviIEnLs1mPA"
 MUNTZBOT_CONSUMER_SECRET = "mFmNuG2wtBGlxntGo91GduXTKivvmtnbRU9BU7Z0"
 MUNTZBOT_OAUTH_TOKEN = "484501315-gk2idhNj4lh55JXcGkCRhxokbZqfvmhelduPOFLA"
@@ -75,10 +75,14 @@ Twitter.search("\"nelson muntz\"", :rpp => 25, :result_type => "recent", :since_
   end
   
   if (status.text.downcase.include?("nelson muntz"))
-    if (status.text.downcase.include?("haw"))
-      responses << { :reply_msg => "@#{status.from_user} Haw haw!", :reply_id => status.id }
+    if (status.text.match("[Hh][Aa][Ww][- ]?[Hh][Aa][Ww]"))
+    	responses << { :reply_msg => "@#{status.from_user} Haw haw!", :reply_id => status.id }
+	elsif (status.text.match("[Hh][Aa][- ]?[Hh][Aa]"))
+		responses << { :reply_msg => "@#{status.from_user} Ha ha!", :reply_id => status.id }
+	elsif (status.text.match("[Jj][Aa][- ]?[Jj][Aa]"))
+		responses << { :reply_msg => "@#{status.from_user} ¡Ja ja!", :reply_id => status.id }
     else
-      responses << { :reply_msg => "@#{status.from_user} #{muntzisms.choice}", :reply_id => status.id }
+    	responses << { :reply_msg => "@#{status.from_user} #{muntzisms.choice}", :reply_id => status.id }
     end
   end
 end
@@ -119,3 +123,4 @@ end
 # Restore standard output.
 
 $stdout = STDOUT
+
