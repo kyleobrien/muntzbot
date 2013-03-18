@@ -6,6 +6,7 @@ A simple Twitter bot that responds to the mention of "Nelson Muntz" with his cha
 Changelog
 =========
 
++ 1.0.5 - Better parroting of laughs, using regex for "Haw haw!", "Ha ha!", and "¡Ja ha!".
 + 1.0.4 - Timestamps on all logs and moved Twitter credential variables to the top of the file. Also, searching for “haw” string, so that I can more accurately mimic the expected laugh type.
 + 1.0.3 - I can’t remember what I changed in this version. :-(
 + 1.0.2 - Was only waiting a second between updates. Had code to make it uniform between 15 and 30, but must have left sleep(1) in there while debugging.
