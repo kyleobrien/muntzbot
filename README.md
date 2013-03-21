@@ -1,11 +1,12 @@
 muntzbot
 ========
 
-A simple Twitter bot that responds to the mention of "Nelson Muntz" with his characteristic laugh.
+A simple Twitter bot that responds to the mention of "Nelson Muntz" with his characteristic laugh. After 7,237 tweets and 492 followers, I'm no longer interested in appealing the ongoing, and well-deserved, suspensions from the Twitter spam team.
 
 Changelog
 =========
 
++ 1.0.6 - Removed keys, secrets and tokens, They've all been invalidated anyway.
 + 1.0.5 - Better parroting of laughs, using regex for "Haw haw!", "Ha ha!", and "¡Ja ha!".
 + 1.0.4 - Timestamps on all logs and moved Twitter credential variables to the top of the file. Also, searching for “haw” string, so that I can more accurately mimic the expected laugh type.
 + 1.0.3 - I can’t remember what I changed in this version. :-(
@@ -21,7 +22,7 @@ Component List
 	+ Twitter Gem
 + Twitter account
 + Text file (for data persistence)
-+ Cron
++ Cron (optional, but handy if you want to automate running this script)
 
 Pseudocode 
 ==========
@@ -31,7 +32,7 @@ Pseudocode
 3. Search is made for phrase asking for items newer than ID.
 4. Response is parsed into individual items.
 5. Items are re-verified to make sure they contain desired phrase.
-6. Response is chosen from predetermined weighted list.
+6. Response is chosen from predetermined weighted list, or if laugh style is detected in original tweet, uses that style.
 7. Response is sent, if last known ID was found in step 2. Otherwise, skip responding this round.
 8. Last known ID is written back to file.
 
